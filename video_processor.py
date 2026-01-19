@@ -3,7 +3,12 @@ Module de traitement vidéo pour VidEdit
 Utilise MoviePy pour les opérations de montage vidéo
 """
 
-from moviepy.editor import VideoFileClip, AudioFileClip, concatenate_videoclips, CompositeAudioClip
+try:
+    # MoviePy 2.x
+    from moviepy import VideoFileClip, AudioFileClip, concatenate_videoclips, CompositeAudioClip
+except ImportError:
+    # MoviePy 1.x
+    from moviepy.editor import VideoFileClip, AudioFileClip, concatenate_videoclips, CompositeAudioClip
 import os
 
 
